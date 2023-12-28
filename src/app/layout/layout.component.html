@@ -1,0 +1,17 @@
+<p>layout works!</p>
+<div>
+    <amplify-authenticator 
+    [loginMechanisms]="['email']"
+    [socialProviders]="['amazon', 'google']"
+  >
+    <ng-template
+      amplifySlot="authenticated"
+      let-user="user"
+      let-signOut="signOut"
+    >
+      <h1>Welcome {{ user.username }}!</h1>
+      <button (click)="signOut()">Sign Out</button>
+    </ng-template>
+  </amplify-authenticator>
+  <button mat-raised-button color="primary" (click)="onGetUserCognitoInfo()" >Get User Info</button>
+</div>
