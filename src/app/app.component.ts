@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('AppComponent => ngOnInit');
-    Hub.listen('auth', async ({ payload }) => {
+    Hub.listen('auth', async ({ payload }: any) => {
       switch (payload.event) {
         case 'signedIn': {
             console.log('user have been signedIn successfully.');
